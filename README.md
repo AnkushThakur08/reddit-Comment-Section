@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# 🧵 Reddit-like Nested Comment Section
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Reddit-inspired threaded comment system built with **React**, **Vite**, **Tailwind CSS**, **TypeScript**, and **Context API**. It supports deep nested replies, edit/delete functionality, upvotes/downvotes, and more—all with dummy data and local state.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Nested/threaded comments (unlimited depth)
+- ✅ Add new top-level comments
+- ✅ Reply to existing comments
+- ✅ Expand/collapse nested threads
+- ✅ Edit and delete comments
+- ✅ Upvote/downvote system
+- ✅ Responsive and clean UI
+- ✅ State managed via Context API
+- ✅ Dummy data initialized on load
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🧱 Tech Stack
+
+- ⚛️ **React**
+- ⚡ **Vite**
+- 💨 **Tailwind CSS**
+- ⛓ **TypeScript**
+- 💬 **React Context API**
+
+---
+
+## 🛠 Setup Instructions
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/reddit-comments.git
+cd reddit-comments
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2.Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+# or
+yarn
 ```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+Visit http://localhost:5173 to see the app in your browser.
+```
+
+## ✨ How It Works
+
+- Each comment includes: `id, parentId, author, content, timestamp, votes`.
+
+- Top-level comments have parentId: null.
+
+- Comments are rendered recursively using the Comment component.
+
+- Context API manages the global comment state.
+
+- Upvote/Downvote count is stored and restricted per comment via localStorage.
+
+- Comments can be expanded/collapsed to view nested replies.
+
+- Dummy data is loaded on app start for demonstration.
+
+## 🔗 Live Demo
+
+🌐 [Click here to view live demo](https://reddit-nested-structure.netlify.app/)
+
+## 👨‍💻 Author
+
+**Ankush Thakur**  
+Javascript Full Stack Developer
+Location: Chandigarh, India
+
+- [LinkedIn] (https://www.linkedin.com/in/ankush-thakur-bba3521a0/)
+
+- [GitHub](https://github.com/AnkushThakur08/)
